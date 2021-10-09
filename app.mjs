@@ -10,7 +10,10 @@ const server = http.createServer((req, res)=>{
         res.end();
     });
 });
-
-server.listen(3000, ()=>{
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+server.listen(port, ()=>{
     console.log('Port 3000');
 });
